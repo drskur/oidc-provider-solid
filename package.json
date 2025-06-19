@@ -1,0 +1,30 @@
+{
+  "name": "solid-oidc-provider",
+  "version": "1.0.0",
+  "description": "OpenID Connect & OAuth2 authentication using react context api as state management",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drskur/solid-oidc-provider.git"
+  },
+  "keywords": [
+    "oauth2",
+    "oidc",
+    "solid-component"
+  ],
+  "author": "drskur",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/drskur/solid-oidc-provider/issues"
+  },
+  "homepage": "https://github.com/drskur/solid-oidc-provider#readme",
+  "devDependencies": {
+    "@types/node": "^24.0.3",
+    "typescript": "^5.8.3"
+  }
+}
