@@ -1,8 +1,9 @@
 {
   "name": "oidc-provider-solid",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "OpenID Connect & OAuth2 authentication using solidjs context api as state management",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
