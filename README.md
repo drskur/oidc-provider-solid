@@ -1,4 +1,4 @@
-# solidjs-oidc-provider
+# oidc-provider-solid
 
 OpenID Connect & OAuth2 authentication provider for SolidJS applications.
 
