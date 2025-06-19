@@ -5,7 +5,7 @@ OpenID Connect & OAuth2 authentication provider for SolidJS applications.
 ## Installation
 
 ```bash
-npm install solidjs-oidc-provider oidc-client-ts
+npm install oidc-provider-solid oidc-client-ts
 ```
 
 ## Usage
@@ -14,7 +14,7 @@ npm install solidjs-oidc-provider oidc-client-ts
 
 ```tsx
 import { render } from "solid-js/web";
-import { AuthProvider } from "solid-oidc-provider";
+import { AuthProvider } from "oidc-provider-solid";
 import App from "./App";
 
 const config = {
@@ -38,7 +38,7 @@ render(
 ### 2. Use the useAuth hook in your components
 
 ```tsx
-import { useAuth } from "solid-oidc-provider";
+import { useAuth } from "oidc-provider-solid";
 
 function MyComponent() {
   const { user, isAuthenticated, isLoading, login, logout } = useAuth();
@@ -92,7 +92,7 @@ Returns the authentication context with the following properties:
 Low-level service for direct OIDC operations:
 
 ```tsx
-import { AuthService } from "solid-oidc-provider";
+import { AuthService } from "oidc-provider-solid";
 
 const authService = new AuthService(config);
 
