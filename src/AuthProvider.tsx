@@ -1,7 +1,7 @@
 import { createSignal, createEffect, JSX } from "solid-js";
 import { User, UserManagerSettings } from "oidc-client-ts";
 import { AuthService } from "./auth";
-import { AuthContextType } from "./AuthContext";
+import { AuthContext, AuthContextType } from "./AuthContext";
 
 /**
  * Props for the AuthProvider component
