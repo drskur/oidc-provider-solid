@@ -1,4 +1,4 @@
-import { UserManager, User, UserManagerSettings } from "oidc-client-ts";
+import { UserManager, User, UserManagerSettings, SignoutRedirectArgs } from "oidc-client-ts";
 
 /**
  * AuthService - OIDC authentication service for SolidJS applications
@@ -102,9 +102,9 @@ export class AuthService {
    * Log out the user and redirect to the OIDC provider's logout page.
    * @throws Error if logout fails
    */
-  async logout(): Promise<void> {
+  async logout(args?: SignoutRedirectArgs): Promise<void> {
     try {
-      await this.userManager.signoutRedirect();
+      await this.userManager.signoutRedirect(args);
     } catch (error) {
       console.error("Failed to logout:", error);
       throw error;

@@ -1,4 +1,4 @@
-import { User } from "oidc-client-ts";
+import { SignoutRedirectArgs, User } from "oidc-client-ts";
 import { createContext } from "solid-js";
 
 export interface AuthContextType {
@@ -6,7 +6,7 @@ export interface AuthContextType {
   isAuthenticated: () => boolean;
   isLoading: () => boolean;
   login: () => Promise<void>;
-  logout: () => Promise<void>;
+  logout: (args?: SignoutRedirectArgs) => Promise<void>;
 }
 
 export const AuthContext = createContext<AuthContextType>();

@@ -87,9 +87,8 @@ export function AuthProvider(props: AuthProviderProps): JSX.Element {
   /**
    * Log out the user and redirect to the OIDC provider's logout endpoint.
    */
-  const logout = async () => {
-    await authService.logout();
-  };
+  const logout = authService.logout;
+
 
   // Check authentication on component mount
   createEffect(async () => {
