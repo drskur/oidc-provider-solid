@@ -98,7 +98,7 @@ export function AuthProvider(props: AuthProviderProps): JSX.Element {
 
   return (
     <AuthContext.Provider value={contextValue}>
-      props.children
+      {props.children}
     </AuthContext.Provider>
   );
 }
