@@ -2,8 +2,16 @@
   "name": "oidc-provider-solid",
   "version": "0.1.6",
   "description": "OpenID Connect & OAuth2 authentication using solidjs context api as state management",
-  "main": "dist/index.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.cjs.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "scripts": {
     "build": "vite build",
     "dev": "vite build --watch",
