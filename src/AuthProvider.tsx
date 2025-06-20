@@ -1,4 +1,4 @@
-import { createSignal, createEffect, JSX } from "solid-js";
+import { createSignal, createEffect, JSX, Show } from "solid-js";
 import { User, UserManagerSettings } from "oidc-client-ts";
 import { AuthService } from "./auth";
 import { AuthContext, AuthContextType } from "./AuthContext";
@@ -11,6 +11,8 @@ interface AuthProviderProps {
   config: UserManagerSettings;
   /** Child components to be wrapped with auth context */
   children: JSX.Element;
+  /** Optional loading component to show while authentication is being checked */
+  loadingComponent?: JSX.Element;
 }
 
 /**
@@ -28,7 +30,9 @@ interface AuthProviderProps {
  *   scope: "openid profile email"
  * };
  * 
- * <AuthProvider config={config}>
+ * const LoadingSpinner = () => <div>Loading...</div>;
+ * 
+ * <AuthProvider config={config} loadingComponent={<LoadingSpinner />}>
  *   <App />
  * </AuthProvider>
  * ```
@@ -97,6 +101,10 @@ export function AuthProvider(props: AuthProviderProps): JSX.Element {
   };
 
   return (
-    <AuthContext.Provider value={contextValue} children={props.children} />
+    <AuthContext.Provider value={contextValue}>
+      <Show when={!isLoading()} fallback={props.loadingComponent}>
+        {props.children}
+      </Show>
+    </AuthContext.Provider>
   );
 }

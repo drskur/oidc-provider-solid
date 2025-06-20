@@ -4,6 +4,7 @@
     "module": "ESNext",
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "jsx": "preserve",
+    "jsxImportSource": "solid-js",
     "outDir": "./dist",
     "rootDir": "./src",
     "strict": true,
