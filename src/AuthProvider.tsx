@@ -17,6 +17,11 @@ interface AuthProviderProps {
 
 /**
  * AuthProvider component that manages authentication state and provides auth context to child components.
+ * Shows a loading component while authentication is being checked to prevent flickering of previous content.
+ * 
+ * @param config - OIDC client configuration
+ * @param children - Child components to be wrapped with auth context
+ * @param loadingComponent - Optional component to show during authentication loading state
  * 
  * Usage example:
  * ```tsx

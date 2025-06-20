@@ -25,9 +25,16 @@ const config = {
   scope: "openid profile email",
 };
 
+// Optional: Custom loading component
+const LoadingSpinner = () => (
+  <div style={{ display: "flex", justify-content: "center", align-items: "center", height: "100vh" }}>
+    <div>Loading...</div>
+  </div>
+);
+
 render(
   () => (
-    <AuthProvider config={config}>
+    <AuthProvider config={config} loadingComponent={<LoadingSpinner />}>
       <App />
     </AuthProvider>
   ),
@@ -67,7 +74,7 @@ function MyComponent() {
 
 ### AuthProvider
 
-The main provider component that manages authentication state.
+The main provider component that manages authentication state and provides loading state management.
 
 **Props:**
 - `config: UserManagerSettings` - OIDC client configuration
@@ -76,6 +83,8 @@ The main provider component that manages authentication state.
   - `redirect_uri`: Callback URL after authentication
   - `response_type`: OAuth2 response type (typically "code")
   - `scope`: Requested scopes (e.g., "openid profile email")
+- `children: JSX.Element` - Child components to be wrapped with auth context
+- `loadingComponent?: JSX.Element` - Optional component to show during authentication loading state (prevents flickering of previous content)
 
 ### useAuth Hook
 
